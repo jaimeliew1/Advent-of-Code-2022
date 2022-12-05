@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 fn parse_input(filename: &str) -> (Vec<Vec<char>>, Vec<Vec<u64>>) {
     let content = std::fs::read_to_string(filename).expect("can't find file");
     let (chunk1, chunk2) = content.split_once("\n\n").unwrap();
