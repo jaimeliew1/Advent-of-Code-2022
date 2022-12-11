@@ -1,7 +1,6 @@
 fn parse_input(filename: &str) -> (Vec<Vec<char>>, Vec<Vec<u64>>) {
     let content = std::fs::read_to_string(filename).expect("can't find file");
     let (chunk1, chunk2) = content.split_once("\n\n").unwrap();
-    println!("{:?}", chunk1);
 
     // Parse crate stack into a vector of character vectors.
     let mut stack: Vec<Vec<char>> = Vec::new();
@@ -32,7 +31,7 @@ fn parse_input(filename: &str) -> (Vec<Vec<char>>, Vec<Vec<u64>>) {
     (stack, instructions)
 }
 
-fn solve() -> (u64, u64) {
+fn solve() -> (String, String) {
     let (stack, instructions) = parse_input("input/day05.txt");
 
     // Part1
@@ -57,9 +56,7 @@ fn solve() -> (u64, u64) {
         }
     }
     let part2: String = stack2.iter().map(|v| v.last().unwrap()).collect();
-    println!("{}", part1);
-    println!("{}", part2);
-    (0, 0)
+    (part1, part2)
 }
 
 aoc2022::aoc!(solve);

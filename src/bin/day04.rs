@@ -10,7 +10,7 @@ fn parse_input(filename: &str) -> Vec<Vec<u64>> {
         .collect()
 }
 
-fn solve() -> (u64, u64) {
+fn solve() -> (usize, usize) {
     let data = parse_input("input/day04.txt");
 
     // Find completely overlapping ranges.
@@ -24,7 +24,7 @@ fn solve() -> (u64, u64) {
         .iter()
         .filter(|x| !((x[1] < x[2]) | (x[0] > x[3])))
         .count();
-    (part1 as u64, part2 as u64)
+    (part1, part2)
 }
 
 aoc2022::aoc!(solve);
