@@ -7,4 +7,5 @@ default-run = "aoc2022"
 
 [dependencies]
 itertools = "0.10.5"
+json = "0.12.4"
 lazy_static = "1.4.0"    
